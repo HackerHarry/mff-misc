@@ -13,6 +13,12 @@ Wird maxamount überschritten, wird abgebrochen.<br>
 Nicht berücksichtigt werden Waren, die bereits von Spieler eingeworfen wurden!<br>
 MFFUSER und MFFPASS müssen angepasst werden.
 
+Der Gebrauch dieses Skripts verstösst gegen die AGB des Betreibers,<br>
+kann eine Löschung des Spielerkontos zur Folge haben und geschieht auf<br>
+**eigenes Risiko**.
+
+Unterstützt den Spielbetreiber durch Kauf von Coins!
+
 ---
 Local Competition Sniper for My Free Farm (German servers only)
 
@@ -23,3 +29,8 @@ Offset is the offset to the current leader and can be positive, negative or 0.<b
 The script aborts, if the sniper would have to throw in more than maxamount.<br>
 Already thrown in goods will be disregarded!<br>
 MFFUSER und MFFPASS need to be changed.
+
+Using this script is against the game provider's terms and conditions.<br>
+Your game account may be suspended. Use this script at your **own risk**.
+
+Buy coins and support the game provider this way!
