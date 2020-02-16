@@ -15,7 +15,7 @@ OFFSET=$1
 MAXAMOUNT=$2
 MFFUSER=deine-farm
 MFFPASS=dein-passwort
-MFFSERVER=24
+MFFSERVER=deine-servernummer
 JQBIN=$(which jq)
 : ${JQBIN:?jq fehlt}
 LOGFILE=/tmp/mffquest$$.log

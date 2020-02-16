@@ -1,7 +1,7 @@
 Lokaler Bauernwettbewerbs-Sniper für My Free Farm
 =================================================
 
-###### English further down
+English version further [down](#english)
 
 Bauernwettbewerbs-Sniper für deutsche My Free Farm Server.
 
@@ -20,6 +20,8 @@ kann eine Löschung des Spielerkontos zur Folge haben und geschieht auf<br>
 Unterstützt den Spielbetreiber durch Kauf von Coins!
 
 ---
+###### English
+
 Local Competition Sniper for My Free Farm (German servers only)
 
 Usage: `./mffLCsniper.sh offset maxamount`
