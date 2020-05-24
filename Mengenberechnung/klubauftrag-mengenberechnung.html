@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>Klubauftrag Mengenberechnung</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/mffbot.css" rel="stylesheet" type="text/css">
+ </head>
+ <body id="main_body" class="main_body text-center">
+  <script type="text/javascript">
+  var jConfigs = {"1":{"products":[{"pid":9,"amount":6307},{"pid":1,"amount":52721}],"level":1,"taskpoints":36},"2":{"products":[{"pid":9,"amount":6307},{"pid":2,"amount":20067}],"level":1,"taskpoints":36},"3":{"products":[{"pid":10,"amount":2525},{"pid":3,"amount":13045}],"level":1,"taskpoints":36},"4":{"products":[{"pid":10,"amount":2525},{"pid":4,"amount":19148}],"level":1,"taskpoints":36},"5":{"products":[{"pid":11,"amount":1577},{"pid":5,"amount":14358}],"level":1,"taskpoints":36},"6":{"products":[{"pid":11,"amount":1577},{"pid":6,"amount":11898}],"level":1,"taskpoints":36},"7":{"products":[{"pid":12,"amount":1050},{"pid":7,"amount":3227}],"level":9,"taskpoints":36},"8":{"products":[{"pid":12,"amount":1050},{"pid":8,"amount":3989}],"level":9,"taskpoints":36},"9":{"products":[{"pid":110,"amount":1050},{"pid":108,"amount":12737}],"level":5,"taskpoints":36},"10":{"products":[{"pid":110,"amount":1050},{"pid":109,"amount":10777}],"level":5,"taskpoints":36},"11":{"products":[{"pid":151,"amount":496},{"pid":153,"amount":195}],"level":11,"taskpoints":36},"12":{"products":[{"pid":151,"amount":384},{"pid":154,"amount":577}],"level":11,"taskpoints":32},"13":{"products":[{"pid":152,"amount":159},{"pid":151,"amount":280},{"pid":153,"amount":320}],"level":12,"taskpoints":36},"14":{"products":[{"pid":152,"amount":159},{"pid":151,"amount":220},{"pid":154,"amount":390}],"level":12,"taskpoints":34},"15":{"products":[{"pid":30,"amount":193},{"pid":12,"amount":661},{"pid":7,"amount":2132}],"level":10,"taskpoints":36},"16":{"products":[{"pid":30,"amount":193},{"pid":12,"amount":661},{"pid":8,"amount":2635}],"level":10,"taskpoints":36},"17":{"products":[{"pid":111,"amount":183},{"pid":110,"amount":562},{"pid":108,"amount":8412}],"level":6,"taskpoints":36},"18":{"products":[{"pid":111,"amount":183},{"pid":110,"amount":562},{"pid":109,"amount":7120}],"level":6,"taskpoints":36},"19":{"products":[{"pid":27,"amount":190},{"pid":10,"amount":1520},{"pid":3,"amount":8722}],"level":8,"taskpoints":36},"20":{"products":[{"pid":27,"amount":190},{"pid":10,"amount":1520},{"pid":4,"amount":12766}],"level":8,"taskpoints":36},"21":{"products":[{"pid":144,"amount":337},{"pid":21,"amount":7588}],"level":3,"taskpoints":30},"22":{"products":[{"pid":25,"amount":393},{"pid":9,"amount":3111},{"pid":1,"amount":40692}],"level":4,"taskpoints":36},"23":{"products":[{"pid":25,"amount":393},{"pid":9,"amount":3111},{"pid":2,"amount":16007}],"level":4,"taskpoints":36},"24":{"products":[{"pid":28,"amount":202},{"pid":11,"amount":978},{"pid":5,"amount":9601}],"level":7,"taskpoints":36},"25":{"products":[{"pid":28,"amount":202},{"pid":11,"amount":978},{"pid":6,"amount":7950}],"level":7,"taskpoints":36},"26":{"products":[{"pid":155,"amount":225},{"pid":152,"amount":24},{"pid":28,"amount":10},{"pid":151,"amount":91},{"pid":11,"amount":246},{"pid":153,"amount":439},{"pid":5,"amount":4635}],"level":13,"taskpoints":39},"27":{"products":[{"pid":155,"amount":225},{"pid":152,"amount":24},{"pid":28,"amount":10},{"pid":151,"amount":91},{"pid":11,"amount":246},{"pid":153,"amount":439},{"pid":6,"amount":3683}],"level":13,"taskpoints":39},"28":{"products":[{"pid":155,"amount":225},{"pid":152,"amount":24},{"pid":28,"amount":10},{"pid":151,"amount":90},{"pid":11,"amount":246},{"pid":154,"amount":171},{"pid":5,"amount":4635}],"level":13,"taskpoints":39},"29":{"products":[{"pid":155,"amount":225},{"pid":152,"amount":24},{"pid":28,"amount":10},{"pid":151,"amount":90},{"pid":11,"amount":246},{"pid":154,"amount":171},{"pid":6,"amount":3683}],"level":13,"taskpoints":39},"30":{"products":[{"pid":156,"amount":179},{"pid":152,"amount":20},{"pid":28,"amount":53},{"pid":151,"amount":82},{"pid":11,"amount":276},{"pid":153,"amount":1065},{"pid":5,"amount":5997}],"level":14,"taskpoints":39},"31":{"products":[{"pid":156,"amount":179},{"pid":152,"amount":20},{"pid":28,"amount":53},{"pid":151,"amount":82},{"pid":11,"amount":276},{"pid":153,"amount":1065},{"pid":6,"amount":4721}],"level":14,"taskpoints":39},"32":{"products":[{"pid":156,"amount":179},{"pid":152,"amount":20},{"pid":28,"amount":53},{"pid":151,"amount":82},{"pid":11,"amount":276},{"pid":154,"amount":245},{"pid":5,"amount":5997}],"level":14,"taskpoints":39},"33":{"products":[{"pid":156,"amount":179},{"pid":152,"amount":20},{"pid":28,"amount":53},{"pid":151,"amount":82},{"pid":11,"amount":276},{"pid":154,"amount":245},{"pid":6,"amount":4721}],"level":14,"taskpoints":39},"34":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":90},{"pid":11,"amount":236},{"pid":153,"amount":409},{"pid":5,"amount":4647}],"level":15,"taskpoints":37},"35":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":90},{"pid":11,"amount":236},{"pid":153,"amount":409},{"pid":6,"amount":3688}],"level":15,"taskpoints":37},"36":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":87},{"pid":11,"amount":236},{"pid":154,"amount":171},{"pid":5,"amount":4647}],"level":15,"taskpoints":37},"37":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":87},{"pid":11,"amount":236},{"pid":154,"amount":171},{"pid":6,"amount":3688}],"level":15,"taskpoints":37},"38":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":90},{"pid":11,"amount":236},{"pid":153,"amount":409},{"pid":5,"amount":4647}],"level":15,"taskpoints":37},"39":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":90},{"pid":11,"amount":236},{"pid":153,"amount":409},{"pid":6,"amount":3688}],"level":15,"taskpoints":37},"40":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":87},{"pid":11,"amount":236},{"pid":154,"amount":171},{"pid":5,"amount":4647}],"level":15,"taskpoints":37},"41":{"products":[{"pid":157,"amount":134},{"pid":152,"amount":76},{"pid":28,"amount":34},{"pid":151,"amount":87},{"pid":11,"amount":236},{"pid":154,"amount":171},{"pid":6,"amount":3688}],"level":15,"taskpoints":37}};
+  var aProductNames = {"0":"Coins","1":"Getreide","2":"Mais","3":"Klee","4":"Raps","5":"Futterrüben","6":"Kräuter","7":"Sonnenblumen","8":"Kornblumen","9":"Eier","10":"Milch","11":"Wolle","12":"Honig","13":"Unkraut","14":"Baumstumpf","15":"Steine","16":"Kakerlaken","17":"Karotten","18":"Gurken","19":"Radieschen","20":"Erdbeeren","21":"Tomaten","22":"Zwiebeln","23":"Spinat","24":"Blumenkohl","25":"Mayonnaise","26":"Kartoffeln","27":"Käse","28":"Wollknäuel","29":"Spargel","30":"Bonbon","31":"Zucchini","32":"Heidelbeeren","33":"Himbeeren","34":"Johannisbeeren","35":"Brombeeren","36":"Mirabellen","37":"Äpfel","38":"Kürbisse","39":"Birnen","40":"Kirschen","41":"Pflaumen","42":"Walnüsse","43":"Oliven","44":"Rotkohl","91":"Zierfisch","92":"Fischfutter","93":"Kraft-Fischfutter","97":"Weihnachtsstern","45":"Taubenschlag","46":"Vogelscheuche","47":"Hinkelstein","48":"Parkbank","49":"Campingzelt","50":"Pilz","51":"Hase","52":"Liebespaar","53":"Bett&nbsp;im&nbsp;Kornfeld","54":"Rehlein","55":"Maulwurfshügel","56":"Schubkarre","57":"Misthaufen","58":"Futterbarren","59":"Fahrrad","60":"Heuballen","61":"Kornkreis","62":"Wegweiser","63":"Katze","64":"Schaf","65":"Maus","66":"Farmer","67":"Steinengel","68":"Kürbis","69":"Brunnen","70":"Bank&nbsp;blau","71":"Bank&nbsp;rot","72":"Rosenbogen","73":"Gartenzwerg","74":"Toilettenhäuschen","75":"Traktorreifen","76":"Reifenschaukel","77":"Klettergerüst","78":"Holzhackplatz","79":"Sonnenschirm","80":"Gartengrill","81":"Holzpflug","82":"Schaf&nbsp;blau","83":"Schaf&nbsp;rot","84":"Schaf&nbsp;grün","85":"Gummistiefel","86":"Mistgabel","87":"Heuballenmann","88":"Minibauernhaus","89":"Gartenzwerg blau","90":"Froschteich","94":"Schlitten","95":"Weihnachtsbaum","96":"Adventskranz","98":"Feuerwerk","99":"Wippe","100":"Kare-san-sui 1","101":"Kare-san-sui 2","102":"Kare-san-sui 3","103":"Kare-san-sui 4","104":"Osterglocke","105":"Osternest","106":"Springbrunnen","107":"Weintrauben","108":"Geranien","109":"Gänseblümchen","110":"Ziegenmilch","111":"Joghurt","112":"Knoblauch","113":"Chili","114":"Basilikum","115":"Steinpilze","116":"Maisöl","117":"Sonnenblumenöl","118":"Rapsöl","119":"Kürbisöl","120":"Walnussöl","121":"Olivenöl","122":"Knoblauchöl","123":"Chiliöl","124":"Basilikumöl","125":"Steinpilzöl","126":"Dahlie","127":"Rhabarber","128":"Wassermelonen","129":"Tee","130":"Karottensaft","131":"Tomatensaft","132":"Erdbeermilch","133":"Radieschenmilch","134":"Karottensaft mit Kräutern","135":"Tomatensaft mit Kräutern","136":"Gegrillter Mais","137":"Knüppelbrot","138":"Spinatknüppelbrot","139":"Gurkensalat","140":"Tomatensalat","141":"Pommes mit Ketchup","142":"Pommes mit Mayo","143":"Pommes rot/weiß","144":"Ketchup","145":"Himbeersaft","146":"Brombeermilch","147":"Apfelsaft","148":"Zucchinigratin","149":"Italienischer Salat","150":"Kürbissuppe","151":"Angorawolle","152":"Angorawollknäuel","153":"Kohlrabi","154":"Löwenzahn","155":"Wollsocken","156":"Wollschal","157":"Wollmütze","158":"Orangene Tulpe","159":"Pferdefutter","160":"Pony-Kraft-Riegel","161":"Karottenkuchen","162":"Erdbeerkuchen","163":"Zwiebelkuchen","164":"Butterhörnchen","165":"Bienenstich","166":"Käsekuchen","167":"Kirschtorte","168":"Walnusssahnerolle","169":"Kräuterkuchen","170":"Olivenbrot","171":"Kugeldistel","172":"Orchidee","173":"Lilie","174":"Rose","175":"Ranunkel","176":"Chrysantheme","177":"Stiefmütterchen","178":"Strohblume","179":"Weidenkätzchen","180":"Kamille","181":"Mohnblume","182":"Schleierkraut","183":"Nelke","184":"Sommeraster","185":"Flieder","186":"Zierkürbis","187":"Hortensie","188":"Fliegenpilz","189":"Tigerlilie","200":"Feines Bogengesteck","201":"Sommergesteck","202":"Kunstvolles Pyramidengesteck","203":"Zartes Frühlingsgesteck","204":"Pyramidengesteck","205":"Farbenfroher Schmuckkranz","206":"Blumenkranz","207":"Biedermeiergesteck","208":"Großes Bogengesteck","209":"Füllhorn","210":"Kugelgesteck","211":"Prachtvoller Blumenkranz","212":"Sommerliches Kugelgesteck","213":"Herbstgesteck","214":"Edles Bogengesteck","215":"Edles Sommergesteck","216":"Edles Pyramidengesteck","217":"Edler Schmuckkranz","218":"Edler Blumenkranz","219":"Edles Herbstgesteck","220":"Fliegenpilzgesteck","221":"Tigerliliengesteck","250":"Aloe vera","251":"Arnika","252":"Zaubernuss","253":"Baerentraube","254":"Ballonpflanze","255":"Nachtschatten","256":"Schafgarbe","257":"Engelwurz","258":"Pestwurz","259":"Pfefferminze","260":"Sonnentau","261":"Johanniskraut","262":"Klette","263":"Herzgespann","264":"Ringelblume","265":"Rittersporn","266":"Efeu","267":"Bruchkraut","268":"Mutterkraut","269":"Eisenkraut","270":"Hagebutte","271":"Holunder","272":"Katzenpfötchen","273":"Pfingstrose","274":"Thymian","275":"Kriechwacholder","276":"Wintergrün","300":"Aloe Arnika Tinktur","301":"ArnikaZauber Tinktur","302":"ZauberVera Tinktur","303":"Baerennuss Tinktur","304":"BallonBaeren Tinktur","305":"Nachtpflanzen Tinktur","306":"Schafschatten Tinktur","307":"EngelSchaf Tinktur","308":"PestEngel Tinktur","309":"Pfefferwurz Tinktur","310":"Sonnenminzen Tinktur","311":"Johannistau Tinktur","312":"Klettenkraut Tinktur","313":"Herzkletten Tinktur","314":"Ringelgespann Tinktur","315":"Ritterblumen Tinktur","316":"RitterEfeu Tinktur","317":"BruchEfeu Tinktur","318":"MutterBruch Tinktur","319":"EisenMutter Tinktur","320":"Hagekraut Tinktur","321":"HoHa Tinktur","322":"Holunderpfötchen Tinktur","323":"Pfingstpfötchen Tinktur","324":"Thymianpfötchen Tinktur","325":"Aloe Arnika Konzentrat","326":"ArnikaZauber Konzentrat","327":"ZauberVera Konzentrat","328":"Baerennuss Konzentrat","329":"BallonBaeren Konzentrat","330":"Wacholderrosen Tinktur","331":"Nachtpflanzen Konzentrat","332":"Schafschatten Konzentrat","333":"EngelSchaf Konzentrat","334":"PestEngel Konzentrat","335":"Thymianpfötchen Konzentrat","336":"Pfefferwurz Konzentrat","337":"Sonnenminzen Konzentrat","338":"Johannistau Konzentrat","339":"Klettenkraut Konzentrat","340":"Herzkletten Konzentrat","341":"Ringelgespann Konzentrat","342":"Ritterblumen Konzentrat","343":"RitterEfeu Konzentrat","344":"EngelsGrün Tinktur","345":"BruchEfeu Konzentrat","346":"MutterBruch Konzentrat","347":"EisenMutter Konzentrat","348":"Hagekraut Konzentrat","349":"HoHa Konzentrat","350":"Biosprit","351":"Ananas","352":"Limette","353":"Litschi","354":"Papaya","355":"Maracuja","356":"Banane","357":"Kumquat","358":"Sternfrucht","359":"Mango","360":"Kokosnuss","361":"Drachenfrucht","400":"Holunderpfötchen Konzentrat","401":"Pfingstpfötchen Konzentrat","402":"Wacholderrosen Konzentrat","403":"EngelsGrün Konzentrat","450":"Erdbeereis","451":"Himbeereis","452":"Johannisbeer-Sorbet","453":"Brombeereis","454":"Mirabelleneis","455":"Apfel-Sorbet","456":"Kirscheis","457":"Ananas-Sorbet","458":"Bananeneis","459":"Drachenfruchteis","460":"Kokosnusseis","461":"Kumquateis","462":"Limetten-Sorbet","463":"Litschieis","464":"Mangoeis","465":"Maracuja-Sorbet","466":"Papayaeis","467":"Sternfruchteis","468":"Bananenmilch","469":"Grüner Smoothie","470":"Exotischer Shake","471":"Pina Colada","472":"Kokos-Milchshake","473":"Zitrus-Drink","474":"Löwenzahnsalat","475":"Kohlauflauf","476":"Pilzsuppe","477":"Hawaii-Toast","478":"Birnen-Auflauf","479":"Zwetschgenkuchen","480":"Limettentorte","481":"Mango-Maracuja-Torte","482":"Bananenkuchen","483":"Rhabarberkuchen","550":"sonnende Kuh","551":"Winterbaum","552":"Kirschblütenbaum","553":"Eiswagen","554":"UFO-Landung","555":"Schneekanone","556":"Glückskatze","557":"Eisbecher","558":"Gemütlicher Sarg","559":"Pirouetten-Schaf","560":"Hebefigur","561":"Schneemann","600":"Süßer Brei","601":"Joghurtmahlzeit","602":"Getreidebrei","603":"Blumenmischung","604":"Beerenbrei","605":"Proteinnahrung","606":"Grüner Brei","607":"Gemüsebrei","608":"Apfelbrei","609":"Früchte-Mischung","630":"Bonbon an der Schnur","631":"Kartoffel-Freund","632":"Karotten-Bumerang","633":"Popcorn-Ball","634":"Kräuter-Maus","635":"Kürbismann","636":"Radieschen-Bonbon-Rassel","637":"Blumenkohl-Suchspiel","638":"Kohlrabi-Ball","639":"Jonglier-Set","660":"Plüschkarotte","661":"Rapsfaser-Teddy","662":"Rapsfaser-Küken","663":"Blumenkissen","664":"Schmetterling","665":"Getreidekissen","666":"Blumenkohl-Kumpel","667":"Sonnenblumen-Kissen","668":"Rüben-Rüdiger","669":"Rosa Schaf","700":"Spitzwegerich","701":"Salbei","702":"Brennnessel","703":"Kümmel","704":"Frauenmantel","705":"Malve","706":"Lavendel","707":"grüne Minze","708":"Melisse","709":"Königskerze","750":"Erfrischungstee","751":"Belebungstee","752":"Wandertee","753":"Sport-Tee","754":"Fitnesstee","755":"Energietee","756":"Harmonie-Tee","757":"Erholungstee","758":"Gesundheitstee","759":"Gute-Laune-Tee","804":"Saftfutter","801":"Mais-Silage","800":"Getreide-Raufutter","805":"Raps-Futter","802":"Kartoffel-Karotte-Mischung","807":"Sonnenblumen-Futter","803":"Wiesenblumen-Futter","809":"Erd-Mischung","806":"Wiesenkräuter-Mischung","810":"Karotte-Klee-Futter","808":"Blumen-Mischung","812":"Kornfeld-Mischung","811":"Gelbe Mischung","813":"Kräuter-Kartoffel-Futter","815":"Löwen-Getreide-Mischung","814":"Gänse-Rüben-Futter","816":"Sonnen-Kräuter-Futter","818":"Rüben-Zahn-Futter","817":"Kartoffel-Mais-Mischung","819":"Klee-Blumen-Futter"};
+  function showConfig(iConfig) {
+   var i, h = "<h5>Grundwerte f&uuml;r Job " + iConfig + "</h5><big><pre>",  sProductName, iProductAmount;
+   var iNumProducts = jConfigs[iConfig].products.length;
+   for (i = 0; i < iNumProducts; i++) {
+    sProductName = aProductNames[jConfigs[iConfig].products[i].pid];
+    iProductAmount = jConfigs[iConfig].products[i].amount;
+    h += iProductAmount + " " + sProductName + "\n";
+   }
+   h += "</big></pre>"
+   document.getElementById("info").innerHTML = h;
+  }
+  function sanityCheck() {
+   var sDifficulty = document.getElementById("difficulty").value;
+   var iNumFarms = document.getElementById("farms").value;
+   switch (sDifficulty) {
+    case "easy":
+     // easy iss 3 - 5 spieler, ergo min. 3 farmen
+     // da man zusätzliche player-slots kaufen kann, ist ein max. wert nicht sinnvoll
+     if (!(iNumFarms >= 3)) {
+      alert("Minumim 3 Farmen beim leichten Auftrag!");
+      return false;
+     }
+     return true;
+     break;
+
+    case "medium":
+     // medium iss 6 - 9 spieler, ergo min. 6 farmen
+     if (!(iNumFarms >= 6)) {
+      alert("Minimum 6 Farmen beim mittleren Auftrag!");
+      return false;
+     }
+     return true;
+     break;
+
+    case "hard":
+     // hard iss 10 - 15 spieler, ergo min. 10 farmen
+     if (!(iNumFarms >= 10)) {
+      alert("Minimum 10 Farmen beim schweren Auftrag!");
+      return false;
+     }
+     return true;
+     break;
+
+    default:
+     return false;
+   }
+  }
+
+  function calcAmounts() {
+   if (!sanityCheck())
+    return false;
+   var sDifficulty = document.getElementById("difficulty").value;
+   var iNumFarms = document.getElementById("farms").value;
+   var iConfig = document.getElementById("jobconfig").value;
+   var i, h = "<h5>Job " + iConfig + " fordert in dieser Konstellation f&uuml;r 100%</h5><big><pre>",  sProductName, iProductAmount;
+   var iNumProducts = jConfigs[iConfig].products.length;
+   for (i = 0; i < iNumProducts; i++) {
+    sProductName = aProductNames[jConfigs[iConfig].products[i].pid];
+    iProductAmount = jConfigs[iConfig].products[i].amount;
+    switch (sDifficulty) {
+     case "easy":
+      iProductAmount = Math.ceil(Math.ceil(iProductAmount * 0.8) * iNumFarms * 0.25);
+      break;
+     case "medium":
+      iProductAmount = Math.ceil(iProductAmount * iNumFarms * 0.375);
+      break;
+     case "hard":
+      iProductAmount = Math.ceil(Math.ceil(iProductAmount * 1.5) * iNumFarms * 0.5);
+      break;
+    }
+    h += iProductAmount + " " + sProductName + "\n";
+   }
+   h += "</pre></big>"
+   document.getElementById("info").innerHTML = h;
+   return false;
+  }
+  </script>
+  <h1>Mengenberechnung f&uuml;r Klubauftr&auml;ge</h1>
+  <div class="form-group">
+   <div class="offset-sm-5 col-sm-2">
+    <a class="btn btn-outline-dark btn-sm" href="http://myfreefarm-berater.forumprofi.de/forumdisplay.php?fid=15" role="button">Forum</a>
+   </div>
+  </div>
+  <div id="info"><br></div>
+  <form name="calc" method="post" action="">
+   <div class="form-group">
+    <div class="offset-sm-5 col-sm-2">
+     <select id="difficulty" name="difficulty" class="form-control">
+     <option value="0" selected>Schwierigkeit</option>
+     <option value="easy">leicht</option>
+     <option value="medium">mittel</option>
+     <option value="hard">schwer</option></select>
+    </div>
+   </div>
+   <div class="form-group">
+    <div class="offset-sm-5 col-sm-2">
+     <select name="jobconfig" id="jobconfig" class="form-control" onchange="return showConfig(document.forms.calc.jobconfig.options[document.forms.calc.jobconfig.options.selectedIndex].value);">
+     <option value="0" selected>Job-Konfiguration</option>
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option>
+     <option value="11">11</option>
+     <option value="12">12</option>
+     <option value="13">13</option>
+     <option value="14">14</option>
+     <option value="15">15</option>
+     <option value="16">16</option>
+     <option value="17">17</option>
+     <option value="18">18</option>
+     <option value="19">19</option>
+     <option value="20">20</option>
+     <option value="21">21</option>
+     <option value="22">22</option>
+     <option value="23">23</option>
+     <option value="24">24</option>
+     <option value="25">25</option>
+     <option value="26">26</option>
+     <option value="27">27</option>
+     <option value="28">28</option>
+     <option value="29">29</option>
+     <option value="30">30</option>
+     <option value="31">31</option>
+     <option value="32">32</option>
+     <option value="33">33</option>
+     <option value="34">34</option>
+     <option value="35">35</option>
+     <option value="36">36</option>
+     <option value="37">37</option>
+     <option value="38">38</option>
+     <option value="39">39</option>
+     <option value="40">40</option>
+     <option value="41">41</option>
+     </select>
+    </div>
+   </div>
+   <div class="form-group">
+    <div class="offset-sm-5 col-sm-2">
+     <input class="form-control" type="text" name="farms" id="farms" placeholder="Anzahl H&ouml;fe/Farmen">
+    </div>
+   </div>
+   <button type="submit" class="btn btn-lg btn-success" value="submit" onclick="return calcAmounts();">Berechnen!</button>
+  </form>
+ </body>
+</html>
