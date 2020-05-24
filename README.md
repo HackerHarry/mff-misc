@@ -16,7 +16,7 @@ Das wird klarer, wenn man die Anleitungen in den Unterordnern liesst.
 
 Miscellaneous My Free Farm (Bash Bot) scripts
 
-## Inhalt
+## Contents
 mffLCsniper - Local Competition Sniper<br>
 mffGetButterfly - Automated purchase of butterflies<br>
 Mengenberechnung - Sorry: german only<br>
