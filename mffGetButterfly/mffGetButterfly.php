@@ -111,7 +111,7 @@ unset($username);
   <h1>My Free Farm Bash Bot - Buy-a-butterfly</h1>
   <div class="form-group">
    <div class="offset-sm-5 col-sm-2">
-    <a class="btn btn-outline-dark btn-sm" href="http://myfreefarm-berater.forumprofi.de/forumdisplay.php?fid=15" role="button">Forum</a>
+    <a class="btn btn-outline-dark btn-sm" href="http://myfreefarm-berater.forumprofi.de/f15-Bash-Bot.html" role="button">Forum</a>
    </div>
   </div>
   <form name="logon" method="post" action="">
