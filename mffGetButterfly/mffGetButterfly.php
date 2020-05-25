@@ -32,7 +32,7 @@ if ($_POST) {
  exit(0);
 }
 include 'functions.php';
-$butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Resedafalter","4":"Admiral","5":"C-Falter","6":"Baumweißling","7":"Schachbrett","8":"Argus Bläuling","9":"Aurorafalter","10":"Tagpfauenauge","11":"Schwalbenschwanz","12":"Krähe","13":"Monarch","14":"Zebrafalter","15":"Blauer Morpho","16":"Glasflügler","17":"Götterbaum-Spinner","18":"Atlasspinner","19":"Kometen-Motte","20":"Kleiner Feuerfalter","21":"Sumpfwiesen-Perlmuttfalter","22":"Weißdolch-Bläuling","23":"Roter Apollo","24":"Goldener Scheckenfalter","25":"Großer Feuerfalter","26":"Großer Schillerfalter","27":"Schwarzer Bär","28":"Segelfalter","29":"Rotrandbär","30":"Totenkopfschwärmer","31":"Mittlerer Weinschwärmer","32":"Brauner Bär","33":"Oleanderschwärmer","34":"Hornissen-Glasflügler","35":"Taubenschwänzchen"}', true));
+$butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Resedafalter","4":"Admiral","5":"C-Falter","6":"BaumweiÃŸling","7":"Schachbrett","8":"Argus BlÃ¤uling","9":"Aurorafalter","10":"Tagpfauenauge","11":"Schwalbenschwanz","12":"KrÃ¤he","13":"Monarch","14":"Zebrafalter","15":"Blauer Morpho","16":"GlasflÃ¼gler","17":"GÃ¶tterbaum-Spinner","18":"Atlasspinner","19":"Kometen-Motte","20":"Kleiner Feuerfalter","21":"Sumpfwiesen-Perlmuttfalter","22":"WeiÃŸdolch-BlÃ¤uling","23":"Roter Apollo","24":"Goldener Scheckenfalter","25":"GroÃŸer Feuerfalter","26":"GroÃŸer Schillerfalter","27":"Schwarzer BÃ¤r","28":"Segelfalter","29":"RotrandbÃ¤r","30":"TotenkopfschwÃ¤rmer","31":"Mittlerer WeinschwÃ¤rmer","32":"Brauner BÃ¤r","33":"OleanderschwÃ¤rmer","34":"Hornissen-GlasflÃ¼gler","35":"TaubenschwÃ¤nzchen"}', true));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -81,8 +81,6 @@ $butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Rese
       if (document.querySelectorAll("[id*=slot]")[i].checked)
        sData += "&slot" + (document.querySelectorAll("[id*=slot]"))[i].value + "=" + (document.querySelectorAll("[id*=slot]"))[i].value;
      }
-alert(sData);
-return false;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
      if (xhttp.readyState != null && (xhttp.readyState < 3 || xhttp.status != 200))
