@@ -89,7 +89,7 @@ $butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Rese
      window.scrollTo(0,document.body.scrollHeight);
     }
     document.getElementById("result").innerHTML = "";
-    xhttp.open("POST", "buy-a-butterfly.php", true);
+    xhttp.open("POST", "mffGetButterfly.php", true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send(sData);
     return false;
