@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Bestimmten Schmetterling mithilfe rotem Ei f¸r bestimmten Slot kaufen
+# Bestimmten Schmetterling mithilfe rotem Ei kaufen
 #
 exec 2>&1
 : ${1:?MFF Benutzername fehlt}
@@ -32,7 +32,7 @@ POSTURL="https://www.myfreefarm.de/ajax/createtoken2.php?n=${NANOVALUE}"
 AGENT="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17.13 (KHTML, like Gecko) Chrome/57.0.2940.56 Safari/537.17.13"
 POSTDATA="server=${MFFSERVER}&username=${MFFUSER}&password=${MFFPASS}&ref=&retid="
 AJAXURL="http://s${MFFSERVER}.myfreefarm.de/ajax/"
-aBUTTERFLIES='{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Resedafalter","4":"Admiral","5":"C-Falter","6":"Baumweiﬂling","7":"Schachbrett","8":"Argus Bl‰uling","9":"Aurorafalter","10":"Tagpfauenauge","11":"Schwalbenschwanz","12":"Kr‰he","13":"Monarch","14":"Zebrafalter","15":"Blauer Morpho","16":"Glasfl¸gler","17":"Gˆtterbaum-Spinner","18":"Atlasspinner","19":"Kometen-Motte","20":"Kleiner Feuerfalter","21":"Sumpfwiesen-Perlmuttfalter","22":"Weiﬂdolch-Bl‰uling","23":"Roter Apollo","24":"Goldener Scheckenfalter","25":"Groﬂer Feuerfalter","26":"Groﬂer Schillerfalter","27":"Schwarzer B‰r","28":"Segelfalter","29":"Rotrandb‰r","30":"Totenkopfschw‰rmer","31":"Mittlerer Weinschw‰rmer","32":"Brauner B‰r","33":"Oleanderschw‰rmer","34":"Hornissen-Glasfl¸gler","35":"Taubenschw‰nzchen"}'
+aBUTTERFLIES='{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Resedafalter","4":"Admiral","5":"C-Falter","6":"Baumwei√üling","7":"Schachbrett","8":"Argus Bl√§uling","9":"Aurorafalter","10":"Tagpfauenauge","11":"Schwalbenschwanz","12":"Kr√§he","13":"Monarch","14":"Zebrafalter","15":"Blauer Morpho","16":"Glasfl√ºgler","17":"G√∂tterbaum-Spinner","18":"Atlasspinner","19":"Kometen-Motte","20":"Kleiner Feuerfalter","21":"Sumpfwiesen-Perlmuttfalter","22":"Wei√üdolch-Bl√§uling","23":"Roter Apollo","24":"Goldener Scheckenfalter","25":"Gro√üer Feuerfalter","26":"Gro√üer Schillerfalter","27":"Schwarzer B√§r","28":"Segelfalter","29":"Rotrandb√§r","30":"Totenkopfschw√§rmer","31":"Mittlerer Weinschw√§rmer","32":"Brauner B√§r","33":"Oleanderschw√§rmer","34":"Hornissen-Glasfl√ºgler","35":"Taubenschw√§nzchen"}'
 
 function login-MFF {
  echo "Login-Token fuer MFF server ${MFFSERVER} anfordern..."
@@ -75,7 +75,7 @@ function getOut {
 }
 
 function check_SlotIsFree {
- # gibt 0 (true) zur¸ck, wenn slot frei ist
+ # gibt 0 (true) zur√ºck, wenn slot frei ist
  local sSlotType
  sSlotType=$($JQBIN -r '.updateblock.farmersmarket.butterfly.data.breed["'${SLOT}'"]? | type' $OUTFILE)
  if [ -z "$sSlotType" ] || [ "$sSlotType" = "null" ]; then
@@ -86,8 +86,8 @@ function check_SlotIsFree {
 }
 
 function check_IsItTheOne {
- # gibt 0 (true) zur¸ck, wenn gew¸nschter schmetterling gekauft wurde
- # oder ein unbrauchbarer wert zur¸ckkommt
+ # gibt 0 (true) zur√ºck, wenn gew√ºnschter schmetterling gekauft wurde
+ # oder ein unbrauchbarer wert zur√ºckkommt
  local iButterfly
  local sButterfly
  iButterfly=$($JQBIN -r '.updateblock.farmersmarket.butterfly.data.breed["'${SLOT}'"]?.butterfly?' $OUTFILE)
@@ -100,7 +100,7 @@ function check_IsItTheOne {
   echo "Ein ${sButterfly} Ei liegt nun im Slot ${SLOT}"
   return 0
  else
-  echo -n "${sButterfly}...ist unerw¸nscht."
+  echo -n "${sButterfly}...ist unerw√ºnscht."
   return 1
  fi
 }
@@ -113,7 +113,7 @@ function getDeco {
  fi
  local bQuestIsString=$($JQBIN '.updateblock.farmersmarket.butterfly.data.last_questid? | type == "string"' $OUTFILE)
  if [ "$bQuestIsString" = "false" ]; then
-  echo "Wert der letzten Quest kann nicht gelesen werden. Dekokauf nicht mˆglich."
+  echo "Wert der letzten Quest kann nicht gelesen werden. Dekokauf nicht m√∂glich."
   return
  fi
  local iQuest=$($JQBIN -r '.updateblock.farmersmarket.butterfly.data.last_questid?' $OUTFILE)
@@ -152,7 +152,7 @@ for SLOT in $SLOT1 $SLOT2 $SLOT3 $SLOT4 $SLOT5 $SLOT6; do
    # getOut
    break
   fi
-  echo "Ei f¸r Slot $SLOT kaufen ... Versuche ¸brig: $MAXREPEAT"
+  echo "Ei f√ºr Slot $SLOT kaufen ... Versuche √ºbrig: $MAXREPEAT"
   SendAJAXFarmRequest "slot=${SLOT}&id=2&mode=butterfly_startbreed"
   if check_IsItTheOne; then
    sleep 1
