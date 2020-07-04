@@ -11,7 +11,7 @@ Höchstvermutlich kannst du die Seite dann unter<br>
 `http://localhost/mffbashbot/mffGetButterfly.php` aufrufen.<br>
 
 
-Standardmäßig werden **25 Kaufversuche (rotes Ei) pro Slot** unternommen.<br>
+Standardmäßig werden **10 Kaufversuche (rotes Ei) pro Slot** unternommen.<br>
 Achte also selbst darauf, dass Du genug kT hast.<br>
 
 Der Gebrauch dieses Skripts verstösst gegen die AGB des Betreibers,<br>
@@ -33,7 +33,7 @@ Presumably, you can then access the page by browsing to<br>
 `http://localhost/mffbashbot/mffGetButterfly.php`.<br>
 
 
-Default is **25 attempts at purchase (red egg) per slot**.<br>
+Default is **10 attempts at purchase (red egg) per slot**.<br>
 So make sure, you can afford using this script.<br>
 
 Using this script is against the game provider's terms and conditions.<br>

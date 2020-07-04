@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 #
-# Bestimmten Schmetterling mithilfe rotem Ei kaufen
+# Bestimmte/n Schmetterling/e mithilfe rotem Ei kaufen
 #
 exec 2>&1
 : ${1:?MFF Benutzername fehlt}
 : ${2:?MFF Passwort fehlt}
 : ${3:?MFF Server fehlt}
 : ${4:?Schmetterlings-Nr. fehlt}
+: ${5:?Slot fehlt}
 
 MFFUSER=$1
 MFFPASS=$2
 MFFSERVER=$3
-BUTTERFLY=$4
-SLOT1=$5
-SLOT2=$6
-SLOT3=$7
-SLOT4=$8
-SLOT5=$9
-SLOT6=${10} # otherwise seen as $1 and an appended '0'
-MAXREPEAT=25
+BUTTERFLIES=$4
+SLOTS=$5
+MAXREPEAT=10
 
 JQBIN=$(which jq)
 : ${JQBIN:?jq fehlt}
@@ -96,13 +92,14 @@ function check_IsItTheOne {
   echo "Fehler beim Lesen des Slots ${SLOT}!"
   return 0
  fi
- if [ $iButterfly -eq $BUTTERFLY ]; then
-  echo "Ein ${sButterfly} Ei liegt nun im Slot ${SLOT}"
-  return 0
- else
-  echo -n "${sButterfly}...ist unerwünscht."
-  return 1
- fi
+ for BUTTERFLY in $BUTTERFLIES; do
+  if [ $iButterfly -eq $BUTTERFLY ]; then
+   echo "Ein ${sButterfly} Ei liegt nun im Slot ${SLOT}"
+   return 0
+  fi
+ done
+ echo -n "${sButterfly}...ist unerwünscht."
+ return 1
 }
 
 function getDeco {
@@ -138,18 +135,19 @@ function getDeco {
 trap getOut SIGINT SIGTERM ERR
 
 GetFarmData
-echo -n "Gekauft werden soll: Ei #${BUTTERFLY} - "
-echo $aBUTTERFLIES | $JQBIN -r '.["'${BUTTERFLY}'"]'
-for SLOT in $SLOT1 $SLOT2 $SLOT3 $SLOT4 $SLOT5 $SLOT6; do
+echo "Gekauft werden soll/en"
+for BUTTERFLY in $BUTTERFLIES; do
+ echo -n "-> "
+ echo $aBUTTERFLIES | $JQBIN -r '.["'${BUTTERFLY}'"]'
+done
+for SLOT in $SLOTS; do
  while (true); do
   if [ $MAXREPEAT -eq 0 ]; then
    echo "Maximale Kauf-Versuche erreicht!"
-   # getOut
    break
   fi
   if ! check_SlotIsFree; then
    echo "Slot $SLOT ist besetzt."
-   # getOut
    break
   fi
   echo "Ei für Slot $SLOT kaufen ... Versuche übrig: $MAXREPEAT"
@@ -157,7 +155,6 @@ for SLOT in $SLOT1 $SLOT2 $SLOT3 $SLOT4 $SLOT5 $SLOT6; do
   if check_IsItTheOne; then
    sleep 1
    getDeco
-   # getOut
    break
   fi
   echo " Ei entfernen..."
@@ -166,7 +163,7 @@ for SLOT in $SLOT1 $SLOT2 $SLOT3 $SLOT4 $SLOT5 $SLOT6; do
   MAXREPEAT=$((MAXREPEAT - 1))
   sleep 1
  done
-MAXREPEAT=25
+MAXREPEAT=10
 done
 
 getOut

@@ -10,15 +10,19 @@ if ($_POST) {
  strpos($_POST["username"], ' ') === false ? $username = $_POST["username"] : $username = rawurlencode($_POST["username"]);
  $server = $_POST["server"];
  $password = $_POST["password"];
- $slot1 = $_POST["slot1"];
- $slot2 = $_POST["slot2"];
- $slot3 = $_POST["slot3"];
- $slot4 = $_POST["slot4"];
- $slot5 = $_POST["slot5"];
- $slot6 = $_POST["slot6"];
- $butterfly = $_POST["butterfly"];
+ if (!empty($_POST["slots"]))
+  $configContents['slots'] = str_replace(",", " ", $_POST["slots"]);
+ else
+  exit(1);
+ $slots = $configContents['slots'];
+ if (!empty($_POST["butterfly"]))
+  $configContents['butterfly'] = str_replace(",", " ", $_POST["butterfly"]);
+ else
+  exit(1);
+ $butterfly = $configContents['butterfly'];
 
- $cmd = "bash /var/www/html/mffbashbot/script/mffGetButterfly.sh $username $password $server $butterfly $slot1 $slot2 $slot3 $slot4 $slot5 $slot6";
+ $cmd = "bash /var/www/html/mffbashbot/script/mffGetButterfly.sh $username $password $server \"$butterfly\" \"$slots\"";
+
  $descriptorspec = array(
   0 => array("pipe", "r"), // stolen from Stack Overflow
   1 => array("pipe", "w"),
@@ -53,7 +57,7 @@ $butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Rese
     var sUser = document.forms.logon.username.value;
     var sPass = document.forms.logon.password.value;
     var iServer = document.forms.logon.server.value;
-    var iButterfly = document.forms.logon.butterfly.value;
+//    var iButterfly = document.forms.logon.butterfly.value;
 //    var iSlot = document.forms.logon.slot.value;
     if (sUser == "0") {
      writeError("Die Farmauswahl");
@@ -67,20 +71,31 @@ $butterflies = (json_decode('{"1":"Zitronenfalter","2":"Kleiner Fuchs","3":"Rese
      writeError("Die Servernummer");
      return false;
     }
-    if (iButterfly == "0") {
-     writeError("Die Schmetterlingswahl");
-     return false;
-    }
+//    if (iButterfly == "0") {
+//     writeError("Die Schmetterlingswahl");
+//     return false;
+//    }
 //    if (iSlot == "0") {
 //     writeError("Die Slotauswahl");
 //     return false;
 //    }
-    var sData = "username=" + sUser + "&server=" + iServer + "&password=" + sPass + "&butterfly=" + iButterfly;
-     j = (document.querySelectorAll("[id*=slot]")).length;
-     for (i = 0; i < j; i++) {
-      if (document.querySelectorAll("[id*=slot]")[i].checked)
-       sData += "&slot" + (document.querySelectorAll("[id*=slot]"))[i].value + "=" + (document.querySelectorAll("[id*=slot]"))[i].value;
-     }
+    var sData = "username=" + sUser + "&server=" + iServer + "&password=" + sPass;
+    j = (document.querySelectorAll("[id*=butterfly]")).length;
+    sData += "&butterfly=";
+    for (i = 0; i < j; i++) {
+     if (document.querySelectorAll("[id*=butterfly]")[i].checked)
+      sData += (document.querySelectorAll("[id*=butterfly]"))[i].value + ",";
+    }
+    if (sData.substring(sData.length-1, sData.length) == ",")
+     sData = sData.substring(0, sData.length - 1);
+    j = (document.querySelectorAll("[id*=slot]")).length;
+    sData += "&slots=";
+    for (i = 0; i < j; i++) {
+     if (document.querySelectorAll("[id*=slot]")[i].checked)
+      sData += (document.querySelectorAll("[id*=slot]"))[i].value + ",";
+    }
+    if (sData.substring(sData.length-1, sData.length) == ",")
+     sData = sData.substring(0, sData.length - 1);
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
      if (xhttp.readyState != null && (xhttp.readyState < 3 || xhttp.status != 200))
@@ -144,33 +159,45 @@ unset($username);
    </div>
    <div class="form-group">
     <div class="offset-sm-5 col-sm-2">
-     <select name="butterfly" class="form-control">
-     <option value="0" selected>Schmetterling</option>
-<?php
- foreach ($butterflies as $key => $value)
-	print "<option id=\"o" . $key . "\" value=\"" . $key . "\">" . $value  . "</option>\n";
-?>
-     </select>
-    </div>
-   </div>
-   <div class="form-group">
-    <div class="offset-sm-5 col-sm-2">
-<!--     <select name="slot" class="form-control">
-     <option value="0" selected>Slot</option>
-     <option id="slot1" value="1">1</option>
-     <option id="slot2" value="2">2</option>
-     <option id="slot3" value="3">3</option>
-     <option id="slot4" value="4">4</option>
-     <option id="slot5" value="5">5</option>
-     <option id="slot6" value="6">6</option>
-     </select> -->
-     <input type="checkbox" id="slot1" name="slot1" value="1">&nbsp;Slot 1&nbsp;&nbsp;<input type="checkbox" id="slot2" name="slot2" value="2">&nbsp;Slot 2&nbsp;&nbsp;<input type="checkbox" id="slot3" name="slot3" value="3">&nbsp;Slot 3<br>
-     <input type="checkbox" id="slot4" name="slot4" value="4">&nbsp;Slot 4&nbsp;&nbsp;<input type="checkbox" id="slot5" name="slot5" value="5">&nbsp;Slot 5&nbsp;&nbsp;<input type="checkbox" id="slot6" name="slot6" value="6">&nbsp;Slot 6
-    </div>
-   </div>
-   <div class="form-group">
-    <div class="offset-sm-5 col-sm-2">
      <input class="form-control" type="password" name="password" placeholder="Password">
+    </div>
+   </div>
+   <div class="row justify-content-center">
+    <div class="col-auto">
+     <table id="slottbl" class="table table-responsive" border="1">
+      <tr>
+       <td align="left"><input type="checkbox" id="slot1" name="slot1" value="1">&nbsp;Slot 1</td>
+       <td align="left"><input type="checkbox" id="slot2" name="slot2" value="2">&nbsp;Slot 2</td>
+       <td align="left"><input type="checkbox" id="slot3" name="slot3" value="3">&nbsp;Slot 3</td>
+      </tr>
+      <tr>
+       <td align="left"><input type="checkbox" id="slot4" name="slot4" value="4">&nbsp;Slot 4</td>
+       <td align="left"><input type="checkbox" id="slot5" name="slot5" value="5">&nbsp;Slot 5</td>
+       <td align="left"><input type="checkbox" id="slot6" name="slot6" value="6">&nbsp;Slot 6</td>
+      </tr>
+     </table>
+    </div>
+   </div>
+   <div class="row justify-content-center">
+    <div class="col-auto">
+     <table id="butterflytbl" class="table table-responsive" border="1">
+<!--      <tr><th colspan="8">Einen dieser Schmetterlinge pro Slot kaufen</th></tr> -->
+<?php
+for ($i = 1; $i < 35; $i++) {
+ print "<tr>";
+ for ($j = 0; $j <= 5; $j++) {
+  if (isset($butterflies["$i"])) {
+   print "<td align=\"left\">";
+   print "<input type=\"checkbox\" id=\"butterfly" . $i . "\" name=\"butterfly" . $i . "\" value=\"" . $i . "\">&nbsp;" . $butterflies["$i"] . "\n";
+   print "</td>";
+   $i++;
+  }
+ }
+ $i--;
+ print "</tr>";
+}
+?>
+     </table>
     </div>
    </div>
    <button type="submit" class="btn btn-lg btn-success" value="submit" onclick="return buyButterfly();">Kaufen !</button>
