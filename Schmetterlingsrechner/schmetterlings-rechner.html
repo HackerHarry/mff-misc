@@ -1,0 +1,894 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>Schmetterlings-Rechner</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/mffbot.css" rel="stylesheet" type="text/css">
+ </head>
+ <body id="main_body" class="main_body text-center">
+  <script type="text/javascript">
+  var jButterflies = {
+  "1": {
+    "name": "Zitronenfalter",
+    "rarity": 1,
+    "level": 1,
+    "products1": {
+      "24": 100
+    },
+    "products2": {
+      "7": 25
+    },
+    "reward": {
+      "money": 890,
+      "points": 33,
+      "blossoms": 2
+    },
+    "care_count1": 5,
+    "care_duration1": 1200,
+    "care_count2": 10,
+    "care_duration2": 1200,
+    "size": 2,
+    "investment": 6845
+  },
+  "2": {
+    "name": "Kleiner Fuchs",
+    "rarity": 1,
+    "level": 2,
+    "products1": {
+      "6": 113
+    },
+    "products2": {
+      "26": 139
+    },
+    "reward": {
+      "money": 1218,
+      "points": 67,
+      "blossoms": 4
+    },
+    "care_count1": 5,
+    "care_duration1": 1800,
+    "care_count2": 10,
+    "care_duration2": 1800,
+    "size": 2,
+    "investment": 9548
+  },
+  "3": {
+    "name": "Resedafalter",
+    "rarity": 1,
+    "level": 3,
+    "products1": {
+      "32": 300
+    },
+    "products2": {
+      "4": 400
+    },
+    "reward": {
+      "money": 2200,
+      "points": 150,
+      "blossoms": 10
+    },
+    "care_count1": 5,
+    "care_duration1": 3600,
+    "care_count2": 10,
+    "care_duration2": 3600,
+    "size": 1,
+    "investment": 12785
+  },
+  "4": {
+    "name": "Admiral",
+    "rarity": 1,
+    "level": 4,
+    "products1": {
+      "33": 240
+    },
+    "products2": {
+      "37": 64
+    },
+    "reward": {
+      "money": 4800,
+      "points": 250,
+      "blossoms": 15
+    },
+    "care_count1": 5,
+    "care_duration1": 4800,
+    "care_count2": 10,
+    "care_duration2": 4800,
+    "size": 2,
+    "investment": 15500
+  },
+  "5": {
+    "name": "C-Falter",
+    "rarity": 1,
+    "level": 5,
+    "products1": {
+      "34": 405
+    },
+    "products2": {
+      "109": 400
+    },
+    "reward": {
+      "money": 2976,
+      "points": 417,
+      "blossoms": 20
+    },
+    "care_count1": 5,
+    "care_duration1": 5400,
+    "care_count2": 10,
+    "care_duration2": 5400,
+    "size": 2,
+    "investment": 17150
+  },
+  "6": {
+    "name": "Baumweißling",
+    "rarity": 1,
+    "level": 6,
+    "products1": {
+      "3": 800
+    },
+    "products2": {
+      "154": 75
+    },
+    "reward": {
+      "money": 5625,
+      "points": 667,
+      "blossoms": 32
+    },
+    "care_count1": 5,
+    "care_duration1": 7200,
+    "care_count2": 10,
+    "care_duration2": 7200,
+    "size": 2,
+    "investment": 10360
+  },
+  "7": {
+    "name": "Schachbrett",
+    "rarity": 1,
+    "level": 7,
+    "products1": {
+      "39": 108
+    },
+    "products2": {
+      "108": 750
+    },
+    "reward": {
+      "money": 15180,
+      "points": 1333,
+      "blossoms": 55
+    },
+    "care_count1": 5,
+    "care_duration1": 10800,
+    "care_count2": 10,
+    "care_duration2": 10800,
+    "size": 1,
+    "investment": 33318
+  },
+  "8": {
+    "name": "Argus Bläuling",
+    "rarity": 1,
+    "level": 8,
+    "products1": {
+      "35": 432
+    },
+    "products2": {
+      "8": 300
+    },
+    "reward": {
+      "money": 11100,
+      "points": 2167,
+      "blossoms": 80
+    },
+    "care_count1": 5,
+    "care_duration1": 14400,
+    "care_count2": 10,
+    "care_duration2": 14400,
+    "size": 1,
+    "investment": 38761
+  },
+  "9": {
+    "name": "Aurorafalter",
+    "rarity": 1,
+    "level": 9,
+    "products1": {
+      "18": 7200
+    },
+    "products2": {
+      "20": 2700
+    },
+    "reward": {
+      "money": 7776,
+      "points": 2833,
+      "blossoms": 100
+    },
+    "care_count1": 5,
+    "care_duration1": 16200,
+    "care_count2": 10,
+    "care_duration2": 16200,
+    "size": 1,
+    "investment": 23720
+  },
+  "10": {
+    "name": "Tagpfauenauge",
+    "rarity": 1,
+    "level": 10,
+    "products1": {
+      "41": 197
+    },
+    "products2": {
+      "40": 225
+    },
+    "reward": {
+      "money": 23288,
+      "points": 4333,
+      "blossoms": 150
+    },
+    "care_count1": 5,
+    "care_duration1": 21600,
+    "care_count2": 10,
+    "care_duration2": 21600,
+    "size": 2,
+    "investment": 64346
+  },
+  "11": {
+    "name": "Schwalbenschwanz",
+    "rarity": 1,
+    "level": 11,
+    "products1": {
+      "23": 2160
+    },
+    "products2": {
+      "36": 819
+    },
+    "reward": {
+      "money": 27649,
+      "points": 6667,
+      "blossoms": 220
+    },
+    "care_count1": 5,
+    "care_duration1": 28800,
+    "care_count2": 10,
+    "care_duration2": 28800,
+    "size": 2,
+    "investment": 46040
+  },
+  "12": {
+    "name": "Krähe",
+    "rarity": 2,
+    "level": 1,
+    "products1": {
+      "351": 45
+    },
+    "products2": {
+      "352": 90
+    },
+    "reward": {
+      "money": 1620,
+      "points": 333,
+      "blossoms": 17
+    },
+    "care_count1": 5,
+    "care_duration1": 3600,
+    "care_count2": 15,
+    "care_duration2": 3600,
+    "size": 2,
+    "investment": 8263
+  },
+  "13": {
+    "name": "Monarch",
+    "rarity": 2,
+    "level": 3,
+    "products1": {
+      "352": 135
+    },
+    "products2": {
+      "353": 23
+    },
+    "reward": {
+      "money": 1932,
+      "points": 617,
+      "blossoms": 28
+    },
+    "care_count1": 5,
+    "care_duration1": 5400,
+    "care_count2": 15,
+    "care_duration2": 5400,
+    "size": 3,
+    "investment": 11075
+  },
+  "14": {
+    "name": "Zebrafalter",
+    "rarity": 2,
+    "level": 5,
+    "products1": {
+      "353": 30
+    },
+    "products2": {
+      "354": 45
+    },
+    "reward": {
+      "money": 1980,
+      "points": 1033,
+      "blossoms": 42
+    },
+    "care_count1": 5,
+    "care_duration1": 7200,
+    "care_count2": 15,
+    "care_duration2": 7200,
+    "size": 3,
+    "investment": 11300
+  },
+  "15": {
+    "name": "Blauer Morpho",
+    "rarity": 2,
+    "level": 7,
+    "products1": {
+      "354": 68
+    },
+    "products2": {
+      "355": 99
+    },
+    "reward": {
+      "money": 4752,
+      "points": 1833,
+      "blossoms": 70
+    },
+    "care_count1": 5,
+    "care_duration1": 10800,
+    "care_count2": 15,
+    "care_duration2": 10800,
+    "size": 3,
+    "investment": 12480
+  },
+  "16": {
+    "name": "Glasflügler",
+    "rarity": 2,
+    "level": 9,
+    "products1": {
+      "355": 131
+    },
+    "products2": {
+      "356": 15
+    },
+    "reward": {
+      "money": 5550,
+      "points": 2833,
+      "blossoms": 100
+    },
+    "care_count1": 5,
+    "care_duration1": 14400,
+    "care_count2": 15,
+    "care_duration2": 14400,
+    "size": 1,
+    "investment": 20720
+  },
+  "17": {
+    "name": "Götterbaum-Spinner",
+    "rarity": 2,
+    "level": 11,
+    "products1": {
+      "356": 30
+    },
+    "products2": {
+      "357": 720
+    },
+    "reward": {
+      "money": 10800,
+      "points": 6333,
+      "blossoms": 220
+    },
+    "care_count1": 5,
+    "care_duration1": 28800,
+    "care_count2": 15,
+    "care_duration2": 28800,
+    "size": 3,
+    "investment": 32750
+  },
+  "18": {
+    "name": "Atlasspinner",
+    "rarity": 2,
+    "level": 13,
+    "products1": {
+      "357": 1080
+    },
+    "products2": {
+      "358": 90
+    },
+    "reward": {
+      "money": 16650,
+      "points": 10833,
+      "blossoms": 360
+    },
+    "care_count1": 5,
+    "care_duration1": 43200,
+    "care_count2": 15,
+    "care_duration2": 43200,
+    "size": 3,
+    "investment": 45500
+  },
+  "19": {
+    "name": "Kometen-Motte",
+    "rarity": 2,
+    "level": 15,
+    "products1": {
+      "358": 113
+    },
+    "products2": {
+      "359": 675
+    },
+    "reward": {
+      "money": 13365,
+      "points": 15000,
+      "blossoms": 500
+    },
+    "care_count1": 5,
+    "care_duration1": 54000,
+    "care_count2": 15,
+    "care_duration2": 54000,
+    "size": 3,
+    "investment": 57263
+  },
+  "20": {
+    "name": "Kleiner Feuerfalter",
+    "rarity": 4,
+    "level": 1,
+    "products1": {
+      "171": 47
+    },
+    "products2": {
+      "172": 48
+    },
+    "reward": {
+      "money": 302,
+      "points": 450,
+      "blossoms": 13
+    },
+    "care_count1": 5,
+    "care_duration1": 2700,
+    "care_count2": 20,
+    "care_duration2": 2700,
+    "size": 1,
+    "investment": 5729
+  },
+  "21": {
+    "name": "Sumpfwiesen-Perlmuttfalter",
+    "rarity": 4,
+    "level": 2,
+    "products1": {
+      "172": 64
+    },
+    "products2": {
+      "173": 56
+    },
+    "reward": {
+      "money": 366,
+      "points": 667,
+      "blossoms": 18
+    },
+    "care_count1": 5,
+    "care_duration1": 3600,
+    "care_count2": 20,
+    "care_duration2": 3600,
+    "size": 1,
+    "investment": 6008
+  },
+  "22": {
+    "name": "Weißdolch-Bläuling",
+    "rarity": 4,
+    "level": 4,
+    "products1": {
+      "173": 112
+    },
+    "products2": {
+      "174": 59
+    },
+    "reward": {
+      "money": 861,
+      "points": 1500,
+      "blossoms": 42
+    },
+    "care_count1": 5,
+    "care_duration1": 7200,
+    "care_count2": 20,
+    "care_duration2": 7200,
+    "size": 1,
+    "investment": 6831
+  },
+  "23": {
+    "name": "Roter Apollo",
+    "rarity": 4,
+    "level": 6,
+    "products1": {
+      "174": 118
+    },
+    "products2": {
+      "175": 192
+    },
+    "reward": {
+      "money": 1882,
+      "points": 3333,
+      "blossoms": 85
+    },
+    "care_count1": 5,
+    "care_duration1": 14400,
+    "care_count2": 20,
+    "care_duration2": 14400,
+    "size": 2,
+    "investment": 9307
+  },
+  "24": {
+    "name": "Goldener Scheckenfalter",
+    "rarity": 4,
+    "level": 8,
+    "products1": {
+      "175": 384
+    },
+    "products2": {
+      "176": 330
+    },
+    "reward": {
+      "money": 3907,
+      "points": 7500,
+      "blossoms": 180
+    },
+    "care_count1": 5,
+    "care_duration1": 28800,
+    "care_count2": 20,
+    "care_duration2": 28800,
+    "size": 1,
+    "investment": 14408
+  },
+  "25": {
+    "name": "Großer Feuerfalter",
+    "rarity": 4,
+    "level": 10,
+    "products1": {
+      "176": 412
+    },
+    "products2": {
+      "177": 388
+    },
+    "reward": {
+      "money": 5129,
+      "points": 10833,
+      "blossoms": 250
+    },
+    "care_count1": 5,
+    "care_duration1": 36000,
+    "care_count2": 20,
+    "care_duration2": 36000,
+    "size": 1,
+    "investment": 17195
+  },
+  "26": {
+    "name": "Großer Schillerfalter",
+    "rarity": 4,
+    "level": 12,
+    "products1": {
+      "177": 543
+    },
+    "products2": {
+      "178": 605
+    },
+    "reward": {
+      "money": 7381,
+      "points": 16667,
+      "blossoms": 380
+    },
+    "care_count1": 5,
+    "care_duration1": 50400,
+    "care_count2": 20,
+    "care_duration2": 50400,
+    "size": 2,
+    "investment": 22946
+  },
+  "27": {
+    "name": "Schwarzer Bär",
+    "rarity": 4,
+    "level": 14,
+    "products1": {
+      "178": 864
+    },
+    "products2": {
+      "179": 752
+    },
+    "reward": {
+      "money": 10979,
+      "points": 27000,
+      "blossoms": 600
+    },
+    "care_count1": 5,
+    "care_duration1": 72000,
+    "care_count2": 20,
+    "care_duration2": 72000,
+    "size": 2,
+    "investment": 31352
+  },
+  "28": {
+    "name": "Segelfalter",
+    "rarity": 4,
+    "level": 16,
+    "products1": {
+      "179": 902
+    },
+    "products2": {
+      "180": 1203
+    },
+    "reward": {
+      "money": 13474,
+      "points": 35800,
+      "blossoms": 800
+    },
+    "care_count1": 5,
+    "care_duration1": 86400,
+    "care_count2": 20,
+    "care_duration2": 86400,
+    "size": 2,
+    "investment": 37923
+  },
+  "29": {
+    "name": "Rotrandbär",
+    "rarity": 3,
+    "level": 1,
+    "products1": {
+      "44": 60
+    },
+    "products2": {
+      "19": 450
+    },
+    "reward": {
+      "money": 918,
+      "points": 233,
+      "blossoms": 12
+    },
+    "care_count1": 5,
+    "care_duration1": 1800,
+    "care_count2": 15,
+    "care_duration2": 1800,
+    "size": 1,
+    "investment": 10460
+  },
+  "30": {
+    "name": "Totenkopfschwärmer",
+    "rarity": 3,
+    "level": 3,
+    "products1": {
+      "114": 100
+    },
+    "products2": {
+      "42": 27
+    },
+    "reward": {
+      "money": 3139,
+      "points": 400,
+      "blossoms": 20
+    },
+    "care_count1": 5,
+    "care_duration1": 2700,
+    "care_count2": 15,
+    "care_duration2": 2700,
+    "size": 3,
+    "investment": 8720
+  },
+  "31": {
+    "name": "Mittlerer Weinschwärmer",
+    "rarity": 3,
+    "level": 6,
+    "products1": {
+      "153": 100
+    },
+    "products2": {
+      "5": 300
+    },
+    "reward": {
+      "money": 2370,
+      "points": 617,
+      "blossoms": 30
+    },
+    "care_count1": 5,
+    "care_duration1": 3600,
+    "care_count2": 15,
+    "care_duration2": 3600,
+    "size": 2,
+    "investment": 11125
+  },
+  "32": {
+    "name": "Brauner Bär",
+    "rarity": 3,
+    "level": 9,
+    "products1": {
+      "43": 48
+    },
+    "products2": {
+      "38": 675
+    },
+    "reward": {
+      "money": 5265,
+      "points": 1083,
+      "blossoms": 50
+    },
+    "care_count1": 5,
+    "care_duration1": 5400,
+    "care_count2": 15,
+    "care_duration2": 5400,
+    "size": 2,
+    "investment": 20886
+  },
+  "33": {
+    "name": "Oleanderschwärmer",
+    "rarity": 3,
+    "level": 12,
+    "products1": {
+      "22": 864
+    },
+    "products2": {
+      "109": 534
+    },
+    "reward": {
+      "money": 3973,
+      "points": 1667,
+      "blossoms": 72
+    },
+    "care_count1": 5,
+    "care_duration1": 7200,
+    "care_count2": 15,
+    "care_duration2": 7200,
+    "size": 3,
+    "investment": 14850
+  },
+  "34": {
+    "name": "Hornissen-Glasflügler",
+    "rarity": 3,
+    "level": 15,
+    "products1": {
+      "31": 7776
+    },
+    "products2": {
+      "108": 4500
+    },
+    "reward": {
+      "money": 91080,
+      "points": 16667,
+      "blossoms": 700
+    },
+    "care_count1": 5,
+    "care_duration1": 64800,
+    "care_count2": 15,
+    "care_duration2": 64800,
+    "size": 1,
+    "investment": 140691
+  },
+  "35": {
+    "name": "Taubenschwänzchen",
+    "rarity": 3,
+    "level": 17,
+    "products1": {
+      "21": 11520
+    },
+    "products2": {
+      "8": 1800
+    },
+    "reward": {
+      "money": 66600,
+      "points": 25000,
+      "blossoms": 1000
+    },
+    "care_count1": 5,
+    "care_duration1": 86400,
+    "care_count2": 15,
+    "care_duration2": 86400,
+    "size": 1,
+    "investment": 117896
+  }
+};
+var jDecay = {"100": 1, "90": 0.95, "80": 0.875, "70": 0.8, "60": 0.725, "50": 0.65, "40": 0.575, "30": 0.5, "20": 0.425, "10": 0.35, "0": 0.275};
+var aProductNames = {"0":"Coins","1":"Getreide","2":"Mais","3":"Klee","4":"Raps","5":"Futterrüben","6":"Kräuter","7":"Sonnenblumen","8":"Kornblumen","9":"Eier","10":"Milch","11":"Wolle","12":"Honig","13":"Unkraut","14":"Baumstumpf","15":"Steine","16":"Kakerlaken","17":"Karotten","18":"Gurken","19":"Radieschen","20":"Erdbeeren","21":"Tomaten","22":"Zwiebeln","23":"Spinat","24":"Blumenkohl","25":"Mayonnaise","26":"Kartoffeln","27":"Käse","28":"Wollknäuel","29":"Spargel","30":"Bonbon","31":"Zucchini","32":"Heidelbeeren","33":"Himbeeren","34":"Johannisbeeren","35":"Brombeeren","36":"Mirabellen","37":"Äpfel","38":"Kürbisse","39":"Birnen","40":"Kirschen","41":"Pflaumen","42":"Walnüsse","43":"Oliven","44":"Rotkohl","91":"Zierfisch","92":"Fischfutter","93":"Kraft-Fischfutter","97":"Weihnachtsstern","45":"Taubenschlag","46":"Vogelscheuche","47":"Hinkelstein","48":"Parkbank","49":"Campingzelt","50":"Pilz","51":"Hase","52":"Liebespaar","53":"Bett&nbsp;im&nbsp;Kornfeld","54":"Rehlein","55":"Maulwurfshügel","56":"Schubkarre","57":"Misthaufen","58":"Futterbarren","59":"Fahrrad","60":"Heuballen","61":"Kornkreis","62":"Wegweiser","63":"Katze","64":"Schaf","65":"Maus","66":"Farmer","67":"Steinengel","68":"Kürbis","69":"Brunnen","70":"Bank&nbsp;blau","71":"Bank&nbsp;rot","72":"Rosenbogen","73":"Gartenzwerg","74":"Toilettenhäuschen","75":"Traktorreifen","76":"Reifenschaukel","77":"Klettergerüst","78":"Holzhackplatz","79":"Sonnenschirm","80":"Gartengrill","81":"Holzpflug","82":"Schaf&nbsp;blau","83":"Schaf&nbsp;rot","84":"Schaf&nbsp;grün","85":"Gummistiefel","86":"Mistgabel","87":"Heuballenmann","88":"Minibauernhaus","89":"Gartenzwerg blau","90":"Froschteich","94":"Schlitten","95":"Weihnachtsbaum","96":"Adventskranz","98":"Feuerwerk","99":"Wippe","100":"Kare-san-sui 1","101":"Kare-san-sui 2","102":"Kare-san-sui 3","103":"Kare-san-sui 4","104":"Osterglocke","105":"Osternest","106":"Springbrunnen","107":"Weintrauben","108":"Geranien","109":"Gänseblümchen","110":"Ziegenmilch","111":"Joghurt","112":"Knoblauch","113":"Chili","114":"Basilikum","115":"Steinpilze","116":"Maisöl","117":"Sonnenblumenöl","118":"Rapsöl","119":"Kürbisöl","120":"Walnussöl","121":"Olivenöl","122":"Knoblauchöl","123":"Chiliöl","124":"Basilikumöl","125":"Steinpilzöl","126":"Dahlie","127":"Rhabarber","128":"Wassermelonen","129":"Tee","130":"Karottensaft","131":"Tomatensaft","132":"Erdbeermilch","133":"Radieschenmilch","134":"Karottensaft mit Kräutern","135":"Tomatensaft mit Kräutern","136":"Gegrillter Mais","137":"Knüppelbrot","138":"Spinatknüppelbrot","139":"Gurkensalat","140":"Tomatensalat","141":"Pommes mit Ketchup","142":"Pommes mit Mayo","143":"Pommes rot/weiß","144":"Ketchup","145":"Himbeersaft","146":"Brombeermilch","147":"Apfelsaft","148":"Zucchinigratin","149":"Italienischer Salat","150":"Kürbissuppe","151":"Angorawolle","152":"Angorawollknäuel","153":"Kohlrabi","154":"Löwenzahn","155":"Wollsocken","156":"Wollschal","157":"Wollmütze","158":"Orangene Tulpe","159":"Pferdefutter","160":"Pony-Kraft-Riegel","161":"Karottenkuchen","162":"Erdbeerkuchen","163":"Zwiebelkuchen","164":"Butterhörnchen","165":"Bienenstich","166":"Käsekuchen","167":"Kirschtorte","168":"Walnusssahnerolle","169":"Kräuterkuchen","170":"Olivenbrot","171":"Kugeldistel","172":"Orchidee","173":"Lilie","174":"Rose","175":"Ranunkel","176":"Chrysantheme","177":"Stiefmütterchen","178":"Strohblume","179":"Weidenkätzchen","180":"Kamille","181":"Mohnblume","182":"Schleierkraut","183":"Nelke","184":"Sommeraster","185":"Flieder","186":"Zierkürbis","187":"Hortensie","188":"Fliegenpilz","189":"Tigerlilie","200":"Feines Bogengesteck","201":"Sommergesteck","202":"Kunstvolles Pyramidengesteck","203":"Zartes Frühlingsgesteck","204":"Pyramidengesteck","205":"Farbenfroher Schmuckkranz","206":"Blumenkranz","207":"Biedermeiergesteck","208":"Großes Bogengesteck","209":"Füllhorn","210":"Kugelgesteck","211":"Prachtvoller Blumenkranz","212":"Sommerliches Kugelgesteck","213":"Herbstgesteck","214":"Edles Bogengesteck","215":"Edles Sommergesteck","216":"Edles Pyramidengesteck","217":"Edler Schmuckkranz","218":"Edler Blumenkranz","219":"Edles Herbstgesteck","220":"Fliegenpilzgesteck","221":"Tigerliliengesteck","250":"Aloe vera","251":"Arnika","252":"Zaubernuss","253":"Baerentraube","254":"Ballonpflanze","255":"Nachtschatten","256":"Schafgarbe","257":"Engelwurz","258":"Pestwurz","259":"Pfefferminze","260":"Sonnentau","261":"Johanniskraut","262":"Klette","263":"Herzgespann","264":"Ringelblume","265":"Rittersporn","266":"Efeu","267":"Bruchkraut","268":"Mutterkraut","269":"Eisenkraut","270":"Hagebutte","271":"Holunder","272":"Katzenpfötchen","273":"Pfingstrose","274":"Thymian","275":"Kriechwacholder","276":"Wintergrün","300":"Aloe Arnika Tinktur","301":"ArnikaZauber Tinktur","302":"ZauberVera Tinktur","303":"Baerennuss Tinktur","304":"BallonBaeren Tinktur","305":"Nachtpflanzen Tinktur","306":"Schafschatten Tinktur","307":"EngelSchaf Tinktur","308":"PestEngel Tinktur","309":"Pfefferwurz Tinktur","310":"Sonnenminzen Tinktur","311":"Johannistau Tinktur","312":"Klettenkraut Tinktur","313":"Herzkletten Tinktur","314":"Ringelgespann Tinktur","315":"Ritterblumen Tinktur","316":"RitterEfeu Tinktur","317":"BruchEfeu Tinktur","318":"MutterBruch Tinktur","319":"EisenMutter Tinktur","320":"Hagekraut Tinktur","321":"HoHa Tinktur","322":"Holunderpfötchen Tinktur","323":"Pfingstpfötchen Tinktur","324":"Thymianpfötchen Tinktur","325":"Aloe Arnika Konzentrat","326":"ArnikaZauber Konzentrat","327":"ZauberVera Konzentrat","328":"Baerennuss Konzentrat","329":"BallonBaeren Konzentrat","330":"Wacholderrosen Tinktur","331":"Nachtpflanzen Konzentrat","332":"Schafschatten Konzentrat","333":"EngelSchaf Konzentrat","334":"PestEngel Konzentrat","335":"Thymianpfötchen Konzentrat","336":"Pfefferwurz Konzentrat","337":"Sonnenminzen Konzentrat","338":"Johannistau Konzentrat","339":"Klettenkraut Konzentrat","340":"Herzkletten Konzentrat","341":"Ringelgespann Konzentrat","342":"Ritterblumen Konzentrat","343":"RitterEfeu Konzentrat","344":"EngelsGrün Tinktur","345":"BruchEfeu Konzentrat","346":"MutterBruch Konzentrat","347":"EisenMutter Konzentrat","348":"Hagekraut Konzentrat","349":"HoHa Konzentrat","350":"Biosprit","351":"Ananas","352":"Limette","353":"Litschi","354":"Papaya","355":"Maracuja","356":"Banane","357":"Kumquat","358":"Sternfrucht","359":"Mango"};
+
+function showBlossoms(butterfly) {
+ var count, htm, hour, mins, cc1, cc2, cd1, cd2, p1, p2, blossoms = 0, bTropisch = false;
+ cc1 = jButterflies[butterfly].care_count1;
+ cd1 = jButterflies[butterfly].care_duration1;
+ cc2 = jButterflies[butterfly].care_count2;
+ cd2 = jButterflies[butterfly].care_duration2;
+ var h = 1;
+ htm = "<table border=\"1\" style=\"margin-left: auto; margin-right: auto;\">";
+ htm += "<tr><th>Fütterung</th><th>Blüten</th><th>mit Brennessel</th><th>mit Dschungel-Gurke</th></tr>";
+ for (count = 0; count < cc2; count++) {
+  var m = ((count * 100) / cc2);
+  m = Math.max(0, (100 - m));
+  for (var s in jDecay)
+   if (parseInt(m) >= parseInt(s))
+    h = jDecay[s];
+  var q = Math.ceil(jButterflies[butterfly].reward.blossoms * h);
+  blossoms += q;
+  htm += "<tr><td>" + (count + 1) + "</td><td style=\"text-align: center;\">" + q + "</td><td style=\"text-align: center;\">" + Math.ceil(q * 1.3) + "</td><td style=\"text-align: center;\">";
+  if (butterfly >= 12 && butterfly <= 19) {
+   htm += Math.ceil(q * 1.5);
+   bTropisch = true; }
+  else
+   htm += "-";
+  htm += "</td></tr>";
+ }
+ htm += "</table><br>";
+ htm += "<table border=\"1\" style=\"margin-left: auto; margin-right: auto;\">";
+ htm += "<tr><td>Verfügbar ab Level</td><td>" + jButterflies[butterfly].level + "</td></tr>";
+ htm += "<tr><td>Fütterungsinvervall</td><td>";
+ hour = Math.floor(cd2 / 3600);
+ mins = Math.floor(cd2 / 60) - (hour * 60);
+ htm += hour + " Std., " + mins +  " Min." + "</td></tr>";
+ htm += "<tr><td>Zeit bis zur Reife</td><td>";
+ hour = Math.floor((cd1 * cc1) / 3600);
+ mins = Math.floor((cd1 * cc1) / 60) - (hour * 60);
+ htm += hour + " Std., " + mins +  " Min." + "</td></tr>";
+ htm += "<tr><td>Benötigte Produkte</td><td>";
+ p1 = Object.keys(jButterflies[butterfly].products1)[0];
+ p2 = Object.keys(jButterflies[butterfly].products2)[0];
+ htm += aProductNames[p1] + " & " + aProductNames[p2] + "</td></tr>";
+ htm += "<tr><td>Blüten pro Stunde über Reife- und Fütterzeit</td><td>";
+ var secs1 = cd1 * cc1;
+ var secs2 = cd2 * cc2;
+ var secs = secs1 + secs2;
+ hour = secs / 3600;
+ q = Math.floor((blossoms / hour) * 100) / 100;
+ htm += q + "</td></tr>";
+ htm += "<tr><td>Blüten pro Stunde ... mit Brennessel</td><td>" + Math.floor((q * 1.3) * 100) / 100 + "</td></tr>";
+ if (bTropisch)
+  htm += "<tr><td>Blüten pro Stunde ... mit Dschungel-Gurke</td><td>" + Math.floor((q * 1.5) * 100) / 100 + "</td></tr>";
+ htm += "</table><br>";
+ document.getElementById("info").innerHTML = htm;
+ return false;
+}
+  </script>
+  <h1>Schmetterlings-Rechner</h1>
+  <div class="form-group">
+   <div class="offset-sm-5 col-sm-2">
+    <a class="btn btn-outline-dark btn-sm" href="http://myfreefarm-berater.forumprofi.de/f15-Bash-Bot.html" role="button">Forum</a>
+   </div>
+  </div>
+  <form name="calc" method="post" action="">
+   <div class="form-group">
+    <div class="offset-sm-5 col-sm-2">
+     <select name="btfly" id="btfly" class="form-control" onchange="return showBlossoms(document.forms.calc.btfly.options[document.forms.calc.btfly.options.selectedIndex].value);">
+     <option value="0" selected>Schmetterling</option>
+     <option value="1">Zitronenfalter</option>
+     <option value="2">Kleiner Fuchs</option>
+     <option value="3">Resedafalter</option>
+     <option value="4">Admiral</option>
+     <option value="5">C-Falter</option>
+     <option value="6">Baumweißling</option>
+     <option value="7">Schachbrett</option>
+     <option value="8">Argus Bläuling</option>
+     <option value="9">Aurorafalter</option>
+     <option value="10">Tagpfauenauge</option>
+     <option value="11">Schwalbenschwanz</option>
+     <option value="12">Krähe</option>
+     <option value="13">Monarch</option>
+     <option value="14">Zebrafalter</option>
+     <option value="15">Blauer Morpho</option>
+     <option value="16">Glasflügler</option>
+     <option value="17">Götterbaum-Spinner</option>
+     <option value="18">Atlasspinner</option>
+     <option value="19">Kometen-Motte</option>
+     <option value="20">Kleiner Feuerfalter</option>
+     <option value="21">Sumpfwiesen-Perlmuttfalter</option>
+     <option value="22">Weißdolch-Bläuling</option>
+     <option value="23">Roter Apollo</option>
+     <option value="24">Goldener Scheckenfalter</option>
+     <option value="25">Großer Feuerfalter</option>
+     <option value="26">Großer Schillerfalter</option>
+     <option value="27">Schwarzer Bär</option>
+     <option value="28">Segelfalter</option>
+     <option value="29">Rotrandbär</option>
+     <option value="30">Totenkopfschwärmer</option>
+     <option value="31">Mittlerer Weinschwärmer</option>
+     <option value="32">Brauner Bär</option>
+     <option value="33">Oleanderschwärmer</option>
+     <option value="34">Hornissen-Glasflügler</option>
+     <option value="35">Taubenschwänzchen</option>
+     </select>
+    </div>
+   </div>
+   <div id="info"><br></div>
+  </form>
+ </body>
+</html>
