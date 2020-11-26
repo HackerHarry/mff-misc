@@ -822,8 +822,10 @@ function showBlossoms(butterfly) {
  htm += hour + " Std., " + mins +  " Min." + "</td></tr>";
  htm += "<tr><td>Benötigte Produkte</td><td>";
  p1 = Object.keys(jButterflies[butterfly].products1)[0];
+ var p1a = jButterflies[butterfly].products1[p1];
  p2 = Object.keys(jButterflies[butterfly].products2)[0];
- htm += aProductNames[p1] + " & " + aProductNames[p2] + "</td></tr>";
+ var p2a = jButterflies[butterfly].products2[p2];
+ htm += p1a + " " + aProductNames[p1] + ", " + p2a + " " + aProductNames[p2] + "</td></tr>";
  htm += "<tr><td>Blüten pro Stunde über Reife- und Fütterzeit</td><td>";
  var secs1 = cd1 * cc1;
  var secs2 = cd2 * cc2;
